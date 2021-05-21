@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<style>
+		.center {
+  		margin: auto;
+  		text-align: center;
+  		color: green
+		}
+	</style>
+	<title>User update</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>User details</h3>
+		<hr>
+		<hr>
+			<a th:href="@{/home/showFormForUpdate(id=${user.id})}"
+	   class="btn btn-primary btn-sm mb-3">Edit Details</a>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Email</th>
+				<th>Pin Code</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+				<td th:text="${user.email}" />	
+				<td th:text="${user.pinCode}" />	
+		</tbody>		
+	</table>
+		
+		<p class="center"> User registered successfully.</p>
+		<hr>
+		
+		
+		<p class="h4 mb-4"></p>
+			<a th:href="@{/home/register}">Back to registration page</a>		
+		<hr>
+		
+	</div>
+</body>
+</html>
