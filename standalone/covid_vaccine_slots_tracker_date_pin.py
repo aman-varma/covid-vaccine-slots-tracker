@@ -6,7 +6,7 @@
 """
 #----------------------- Parameters to change ----------------------
 
-pin_codes = [480001, 462001, 560048, 560036]      # Pincodes to check
+pin_codes = [560048, 560023, 560029, 560036]      # Pincodes to check
 days = 7     # Number of days to check (starting from today)
 min_age_limit = 18
 num_alerts = 10    # Number of alert messages

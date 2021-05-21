@@ -6,8 +6,8 @@
 """
 #----------------------- Parameters to change ----------------------
 
-pin_codes = [560048, 560023, 560029, 560036]      # Pincodes to check
-min_age_limit = 45
+pin_codes = [480001, 560023, 560029, 560036]      # Pincodes to check
+min_age_limit = 18
 num_alerts = 10    # Number of alert messages
 
 # There is a rate limit of 100 queries per 5 min on the website.
