@@ -8,8 +8,8 @@
 
 pin_codes = [480001, 560023, 560029, 560036]      # Pincodes to check
 min_age_limit = 18
-num_alerts = 10    # Number of alert messages
-
+num_alerts = 5    # Number of alert messages
+dose = "1"        # for dose 2 use "2"
 # There is a rate limit of 100 queries per 5 min on the website.
 attempts_per_minute = 5   # Number of attempts in one minute for all days                         
 #-------------------------------------------------------------------
@@ -35,7 +35,7 @@ while True:
             responses = r.json()
             for centers in responses['centers']:
                 for data in centers['sessions']:
-                    if (int(data['min_age_limit']) == min_age_limit and int(data['available_capacity']) > 0):
+                    if (int(data['min_age_limit']) == min_age_limit and int(data['available_capacity_dose' + dose]) > 0):
                         print("----------- date: " + data['date'] + " ----------- pin code: " + str(pin_code) + " -----------")
                         print("Center: " + centers['name'])
                         print("Min Age Limit: " + str(data['min_age_limit']))
