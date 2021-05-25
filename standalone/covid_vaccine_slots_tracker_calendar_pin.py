@@ -39,7 +39,7 @@ while True:
                         print("----------- date: " + data['date'] + " ----------- pin code: " + str(pin_code) + " -----------")
                         print("Center: " + centers['name'])
                         print("Min Age Limit: " + str(data['min_age_limit']))
-                        print("Available Capacity: " + str(data['available_capacity']))
+                        print("Available Capacity: " + str(data['available_capacity_dose' + dose]) + "  ,Dose: " + dose)
                         print("Slots: " + str(data['slots']))
                         print()
                         if pin_code not in available_pin_codes:

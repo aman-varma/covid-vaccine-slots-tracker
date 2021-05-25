@@ -9,7 +9,8 @@
 pin_codes = [560048, 560023, 560029, 560036]      # Pincodes to check
 days = 7     # Number of days to check (starting from today)
 min_age_limit = 18
-num_alerts = 10    # Number of alert messages
+num_alerts = 5    # Number of alert messages
+dose = "1"        # for dose 2 use "2"
 
 # There is a rate limit of 100 queries per 5 min on the website.
 attempts_per_minute = 1   # Number of attempts in one minute for all days                         
@@ -42,11 +43,11 @@ while True:
                 r = requests.get(url = url,params=PARAMS, headers=headers)
                 responses = r.json()
                 for data in responses['sessions']:
-                    if (int(data['min_age_limit']) == min_age_limit):
+                    if (int(data['min_age_limit']) == min_age_limit and int(data['available_capacity_dose' + dose]) > 0):
                         print("----------- date: " + date + " ----------- pin code: " + str(pin_code) + " -----------")
                         print("Center: " + data['name'])
                         print("Min Age Limit: " + str(data['min_age_limit']))
-                        print("Available Capacity: " + str(data['available_capacity']))
+                        print("Available Capacity: " + str(data['available_capacity_dose' + dose])  + "  , Dose: " + dose)
                         print("Slots: " + str(data['slots']))
                         print()
                         if pin_code not in available_pin_codes:

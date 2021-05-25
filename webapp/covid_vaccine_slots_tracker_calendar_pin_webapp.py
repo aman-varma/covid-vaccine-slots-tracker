@@ -89,7 +89,7 @@ while True:
                         message = "----------- date: " + data['date'] + " ----------- pin code: " + str(pin_code) + " -----------\n" 
                         message += "Center: " + centers['name'] + "\n"
                         message += "Min Age Limit: " + str(data['min_age_limit']) + "\n"
-                        message += "Available Capacity: " + str(data['available_capacity']) + "\n"
+                        message += "Available Capacity- Dose 1:" + str(data['available_capacity_dose1']) + ", Dose2: " + str(data['available_capacity_dose2']) + "\n"
                         message += "Slots: " + str(data['slots']) + "\n\n"
                         update_available_pin_code_email_mapping (message, pin_codes_to_check[pin_code] ,pin_code)    
         except Exception as e:
